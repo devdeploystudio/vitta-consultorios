@@ -31,7 +31,7 @@ export function renderBackups(container){
 
   container.innerHTML = `
     <div class="view__head">
-      <div><h1>Respaldos</h1><p>Copias de seguridad de toda la información del sistema</p></div>
+      <div><h1>Respaldos</h1><p>Copias de seguridad de toda la información del sistema <em>(simulado en esta demo: el respaldo se genera y guarda en el navegador, no en un servidor real)</em></p></div>
       <div style="display:flex; gap:10px;">
         <button class="btn btn--ghost" id="btnRestaurar">${icon('database')} Restaurar desde archivo</button>
         <button class="btn btn--primary" id="btnRespaldar">${icon('download')} Generar respaldo ahora</button>
