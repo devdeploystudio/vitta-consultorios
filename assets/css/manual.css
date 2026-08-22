@@ -1,0 +1,74 @@
+.manual-nav{
+  position: sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 16px 28px; background: rgba(243,247,246,.9); backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.manual-nav__brand{ display:flex; align-items:center; gap:9px; font-family: var(--font-head); font-weight:700; font-size:16px; }
+.manual-nav__brand span.mark{
+  width:28px; height:28px; border-radius:8px; background: var(--primary); display:flex; align-items:center; justify-content:center;
+}
+.manual-nav__brand svg{ width:15px; height:15px; stroke:#eef6f2; fill:none; stroke-width:2.3; stroke-linecap:round; stroke-linejoin:round; }
+
+.manual-hero{
+  position:relative; padding: 70px 28px; color:#eef6f2; overflow:hidden;
+  background: url('../img/consultorio-consulta.png') center 20% / cover no-repeat;
+}
+.manual-hero::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(180deg, rgba(10,32,27,.88) 0%, rgba(10,32,27,.7) 60%, rgba(10,32,27,.92) 100%);
+}
+.manual-hero__inner{ position:relative; max-width: 760px; margin:0 auto; text-align:center; }
+.manual-hero__inner p.kicker{ text-transform:uppercase; letter-spacing:.1em; font-size:12.5px; font-weight:700; color: rgba(238,246,242,.75); margin-bottom:10px; }
+.manual-hero__inner h1{ font-size: clamp(26px, 4vw, 38px); margin-bottom:12px; }
+.manual-hero__inner p.desc{ color: rgba(238,246,242,.85); font-size:15px; }
+
+.manual-body{ max-width: 760px; margin: -30px auto 60px; padding: 0 20px; position:relative; z-index:2; }
+
+.manual-card{
+  background: var(--card); border:1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 30px 32px; margin-bottom: 22px;
+}
+.manual-card h2{ font-size:20px; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.manual-card h2 .h-icon{ width:32px; height:32px; border-radius:9px; background: var(--primary-soft); color: var(--primary-dim); display:flex; align-items:center; justify-content:center; flex:none; }
+.manual-card h2 .h-icon svg{ width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.manual-card p{ color: var(--muted); font-size:14.5px; margin-bottom:10px; }
+.manual-card p:last-child{ margin-bottom:0; }
+
+.manual-steps{ counter-reset: paso; margin-top:12px; }
+.manual-step{ display:flex; gap:14px; padding: 10px 0; border-top:1px solid var(--line); }
+.manual-step:first-child{ border-top:0; }
+.manual-step__num{
+  counter-increment: paso; flex:none; width:26px; height:26px; border-radius:50%;
+  background: var(--primary); color:#fff; font-weight:700; font-size:12.5px;
+  display:flex; align-items:center; justify-content:center;
+}
+.manual-step__num::before{ content: counter(paso); }
+.manual-step__text{ font-size:14px; padding-top:2px; }
+.manual-step__text strong{ display:block; font-size:14.5px; margin-bottom:2px; }
+
+.manual-roles{ display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; margin-top:6px; }
+.manual-role{ border:1px solid var(--line); border-radius: 12px; padding: 16px; }
+.manual-role h3{ font-size:14.5px; margin-bottom:6px; }
+.manual-role ul{ display:flex; flex-direction:column; gap:5px; }
+.manual-role li{ font-size:13px; color: var(--muted); padding-left:16px; position:relative; }
+.manual-role li::before{ content:"–"; position:absolute; left:0; color: var(--primary); }
+
+.manual-cred-table{ width:100%; margin-top:10px; }
+.manual-cred-table th{ text-align:left; font-size:11.5px; text-transform:uppercase; color: var(--muted); padding: 8px 10px; }
+.manual-cred-table td{ padding: 9px 10px; font-size:13px; border-top:1px solid var(--line); }
+.manual-cred-table td:last-child{ font-family: ui-monospace, 'Courier New', monospace; color: var(--muted); }
+
+.manual-figure{ border-radius: 14px; overflow:hidden; margin-top:14px; border:1px solid var(--line); }
+.manual-figure img{ width:100%; display:block; }
+
+.manual-foot{ display:flex; justify-content:center; flex-wrap:wrap; gap:14px; text-align:center; padding: 30px 20px 60px; color: var(--muted-2); font-size:12.5px; }
+.manual-foot-credit{ display:inline-flex; align-items:center; gap:6px; }
+.manual-foot-logo{ height:13px; width:auto; opacity:.85; transition:opacity .25s ease; }
+.manual-foot-credit:hover .manual-foot-logo{ opacity:1; }
+
+@media (max-width: 640px){
+  .manual-roles{ grid-template-columns: 1fr; }
+  .manual-card{ padding: 22px 20px; }
+  .manual-hero{ padding: 54px 20px; }
+}

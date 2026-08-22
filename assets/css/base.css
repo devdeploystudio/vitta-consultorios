@@ -1,0 +1,117 @@
+:root{
+  --ink: #10241f;
+  --paper: #f3f7f6;
+  --paper-2: #e9f1ee;
+  --card: #ffffff;
+  --muted: #5c6d68;
+  --muted-2: #8b9895;
+  --line: rgba(16,36,31,.12);
+  --primary: #0e6b5c;
+  --primary-dim: #0a5245;
+  --primary-soft: #e3f2ee;
+  --accent: #d97a4d;
+  --accent-soft: #fbe9df;
+  --success: #2f9e63;
+  --success-soft: #e3f6ea;
+  --danger: #c94b3f;
+  --danger-soft: #fbe6e3;
+  --warning: #c98a1f;
+  --warning-soft: #faf0dc;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow: 0 10px 30px rgba(16,36,31,.08);
+  --shadow-lg: 0 24px 60px rgba(16,36,31,.16);
+  --font-head: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --sidebar-w: 248px;
+  --topbar-h: 68px;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+[hidden]{ display:none !important; }
+
+html{ -webkit-text-size-adjust: 100%; }
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input,select,textarea{ font: inherit; color: inherit; }
+h1,h2,h3,h4{ font-family: var(--font-head); margin:0; line-height:1.15; letter-spacing:-.01em; }
+p{ margin:0; }
+ul,ol{ list-style:none; margin:0; padding:0; }
+table{ border-collapse: collapse; width:100%; }
+svg{ display:block; }
+
+::selection{ background: var(--primary); color:#fff; }
+
+/* la app entera vive atras de este loader mientras arranca */
+.boot{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+  background: linear-gradient(160deg, #0a201b 0%, #0e6b5c 100%);
+  transition: opacity .5s var(--ease), visibility .5s var(--ease);
+}
+.boot__mark{ width:42px; height:42px; }
+.boot__mark svg{ width:100%; height:100%; overflow:visible; }
+.boot__mark path{
+  fill:none; stroke:#eef6f2; stroke-width:2.3; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:64; stroke-dashoffset:64;
+  animation: bootDraw 1.1s var(--ease) infinite alternate;
+}
+@keyframes bootDraw{ to{ stroke-dashoffset:0; } }
+.boot__label{
+  font-family: var(--font-head); font-weight:700; letter-spacing:.22em; font-size:12.5px;
+  color:#eef6f2; text-transform:uppercase;
+}
+.boot__bar{ width:110px; height:2px; border-radius:2px; background: rgba(238,246,242,.2); overflow:hidden; position:relative; }
+.boot__bar::after{
+  content:""; position:absolute; inset:0; background:#eef6f2;
+  animation: bootLoad 1.1s var(--ease) forwards;
+}
+@keyframes bootLoad{ from{ transform: translateX(-100%); } to{ transform: translateX(0); } }
+.boot.is-done{ opacity:0; visibility:hidden; pointer-events:none; }
+
+/* cursor de marca: un punto que sigue el mouse y un anillo que lo persigue con retraso */
+@media (hover:hover) and (pointer:fine){
+  body{ cursor:none; }
+  a, button, .sidebar__link, .tab, .agenda-item, .login__demo-item, .table tbody tr, .role-pick label{ cursor:none; }
+}
+.cursor-dot, .cursor-ring{
+  position: fixed; top:0; left:0; pointer-events:none; z-index: 10000;
+  border-radius:50%; transform: translate(-50%,-50%);
+  transition: opacity .2s var(--ease);
+}
+.cursor-dot{ width:7px; height:7px; background: var(--primary); transition: background .2s var(--ease), transform .15s var(--ease); }
+.cursor-ring{
+  width:30px; height:30px; border:1.5px solid var(--primary);
+  transition: width .25s var(--ease), height .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+}
+.cursor-ring.is-active{ width:46px; height:46px; background: var(--primary-soft); }
+.cursor-dot.is-on-dark{ background:#eef6f2; }
+.cursor-ring.is-on-dark{ border-color:#eef6f2; }
+@media (hover:none), (pointer:coarse){ .cursor-dot, .cursor-ring{ display:none; } body{ cursor:auto; } }
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0; padding:0; margin:-1px;
+}
+
+.scrollbar{ scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.scrollbar::-webkit-scrollbar{ width:6px; height:6px; }
+.scrollbar::-webkit-scrollbar-thumb{ background: var(--line); border-radius:10px; }
+
+/* para el boton "exportar a PDF": solo se imprime la tabla de reporte */
+@media print{
+  body *{ visibility:hidden; }
+  .print-area, .print-area *{ visibility:visible; }
+  .print-area{ position:absolute; top:0; left:0; width:100%; }
+}

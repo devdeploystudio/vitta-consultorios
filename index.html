@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitta · Atención médica integral</title>
+<meta name="description" content="Sitio de prueba de portfolio: sitio institucional de Vitta, un centro de salud con turnos online, tres sedes y atención médica integral.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/public.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="pub-nav" id="pubNav">
+  <a href="index.html" class="pub-nav__brand">
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+    VITTA
+  </a>
+  <ul class="pub-nav__links" id="pubNavLinks">
+    <li><a href="index.html" class="is-active">Inicio</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+    <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+    <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+    <li><a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__mobile-cta">Portal de turnos</a></li>
+  </ul>
+  <div class="pub-nav__actions">
+    <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__cta-desktop">Portal de turnos</a>
+    <button class="pub-nav__burger" id="pubBurger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pub-hero">
+  <div class="pub-hero__inner">
+    <p class="kicker">Centro de salud</p>
+    <h1>Atención médica cercana, con turnos sin vueltas.</h1>
+    <p>Clínica médica, especialidades, laboratorio e imágenes en un mismo lugar. Pedí tu turno online y accedé a tu historia clínica desde cualquier sede.</p>
+    <div class="pub-hero__actions">
+      <a href="pages/sistema/portal.html" class="btn btn--primary">Portal de turnos</a>
+      <a href="#servicios" class="btn btn--ghost">Ver especialidades</a>
+    </div>
+  </div>
+</header>
+
+<div class="pub-stats reveal">
+  <div class="pub-stat"><strong>15+</strong><span>Años de trayectoria</span></div>
+  <div class="pub-stat"><strong>40.000+</strong><span>Pacientes atendidos</span></div>
+  <div class="pub-stat"><strong>60+</strong><span>Profesionales matriculados</span></div>
+  <div class="pub-stat"><strong>3</strong><span>Sedes en la ciudad</span></div>
+</div>
+
+<!-- QUE ES VITTA -->
+<section class="pub-section">
+  <div class="pub-about">
+    <div class="pub-about__media reveal">
+      <img src="assets/img/consultorio-consulta.png" alt="Médica conversando con una paciente durante una consulta">
+    </div>
+    <div class="pub-about__content reveal reveal-1">
+      <p class="kicker">Quiénes somos</p>
+      <h2>Un centro de salud pensado para acompañarte, no solo para atenderte</h2>
+      <p>Vitta es un centro de salud privado con más de 15 años de trayectoria. Combinamos clínica médica, especialidades, laboratorio y diagnóstico por imágenes, para que la mayoría de tus consultas se resuelvan sin derivarte de un lado a otro.</p>
+      <p>Cada profesional accede a tu historia clínica digital sin importar en qué sede te atendiste antes, así que no volvés a repetir tu historia médica cada vez que cambiás de consultorio.</p>
+      <ul class="pub-about__list">
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Historia clínica digital compartida entre sedes</li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Turnos y resultados de estudios desde el portal online</li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Equipo profesional matriculado en cada especialidad</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="pub-section pub-section--tight" id="servicios">
+  <div class="pub-section__head reveal">
+    <p class="kicker">Especialidades</p>
+    <h2>Qué encontrás en Vitta</h2>
+    <p>Ocho especialidades bajo un mismo sistema de turnos e historia clínica, para resolver la mayoría de tus consultas sin derivaciones innecesarias.</p>
+  </div>
+  <div class="pub-services">
+    <article class="service-card reveal">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4.3"/></svg></span>
+      <h3>Clínica médica</h3>
+      <p>Consultas generales, control de rutina y seguimiento de enfermedades crónicas.</p>
+    </article>
+    <article class="service-card reveal reveal-1">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M3 20c0-3.3 2.7-5.7 6-5.7s6 2.4 6 5.7"/><path d="M15.5 13.5c2.6.4 4.5 2.6 4.5 6"/><circle cx="17.5" cy="7.5" r="2.4"/></svg></span>
+      <h3>Pediatría</h3>
+      <p>Controles de salud del niño, calendario de vacunación y guardia pediátrica.</p>
+    </article>
+    <article class="service-card reveal reveal-2">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M20.8 8.6c0 5.4-8.8 10.4-8.8 10.4S3.2 14 3.2 8.6a4.6 4.6 0 0 1 8.8-1.9 4.6 4.6 0 0 1 8.8 1.9Z"/></svg></span>
+      <h3>Cardiología</h3>
+      <p>Electrocardiograma, ergometría y control cardiovascular preventivo.</p>
+    </article>
+    <article class="service-card reveal reveal-3">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M4.5 8h15M6.5 8v10a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5V8"/></svg></span>
+      <h3>Ginecología</h3>
+      <p>Controles anuales, seguimiento de embarazo y planificación familiar.</p>
+    </article>
+    <article class="service-card reveal">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M12 3c-1.5 3-2 5-2 7a2 2 0 0 0 4 0c0-2-.5-4-2-7Z"/><path d="M5 14c1-1.5 3-2.5 5-2.5"/><path d="M19 14c-1-1.5-3-2.5-5-2.5"/><path d="M5 14c0 3.5 3 6.5 7 6.5s7-3 7-6.5"/></svg></span>
+      <h3>Odontología</h3>
+      <p>Control, limpieza, endodoncia y estética dental para toda la familia.</p>
+    </article>
+    <article class="service-card reveal reveal-1">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></span>
+      <h3>Kinesiología</h3>
+      <p>Rehabilitación traumatológica, deportiva y respiratoria con seguimiento personalizado.</p>
+    </article>
+    <article class="service-card reveal reveal-2">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M8 7h8l1.5 13a1.5 1.5 0 0 1-1.5 1.7H8a1.5 1.5 0 0 1-1.5-1.7L8 7Z"/><path d="M7 14h10"/></svg></span>
+      <h3>Laboratorio</h3>
+      <p>Análisis clínicos con resultados disponibles online desde el portal.</p>
+    </article>
+    <article class="service-card reveal reveal-3">
+      <span class="service-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.3"/><circle cx="12" cy="12" r="3.4"/><path d="M8 5l1.5-2h5L16 5"/></svg></span>
+      <h3>Diagnóstico por imágenes</h3>
+      <p>Radiografía, ecografía y densitometría ósea con turno preferencial.</p>
+    </article>
+  </div>
+</section>
+
+<!-- POR QUE ELEGIRNOS -->
+<section class="pub-section pub-why">
+  <div class="pub-section__head reveal">
+    <p class="kicker">Por qué Vitta</p>
+    <h2>Pensado para que perder menos tiempo</h2>
+  </div>
+  <div class="pub-why__grid">
+    <div class="why-card reveal">
+      <span class="why-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+      <h3>Turnos online 24/7</h3>
+      <p>Pedí, cambiá o cancelá tu turno desde el portal cuando quieras, sin llamar por teléfono.</p>
+    </div>
+    <div class="why-card reveal reveal-1">
+      <span class="why-card__icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 2v4M16 2v4M4 10h16"/></svg></span>
+      <h3>Historia clínica digital</h3>
+      <p>Tus estudios y consultas anteriores, disponibles para cualquier profesional que te atienda.</p>
+    </div>
+    <div class="why-card reveal reveal-2">
+      <span class="why-card__icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg></span>
+      <h3>Equipo matriculado</h3>
+      <p>Profesionales matriculados en cada especialidad, con actualización médica continua.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA PORTAL -->
+<section class="pub-section">
+  <div class="pub-cta reveal">
+    <div class="pub-cta__inner">
+      <h2>¿Necesitás un turno?</h2>
+      <p>Entrá al portal de Vitta para pedir tu turno, ver tu historia clínica o consultar resultados de estudios.</p>
+      <div class="pub-cta__actions">
+        <a href="pages/sistema/portal.html" class="btn btn--primary">Ir al portal de turnos</a>
+        <a href="pages/informacion/contacto.html" class="btn btn--ghost">Prefiero que me contacten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pub-footer">
+  <div class="pub-footer__top">
+    <div class="pub-footer__col">
+      <div class="pub-footer__brand">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+        VITTA
+      </div>
+      <p>Centro de salud con clínica médica, especialidades, laboratorio e imágenes en tres sedes de la ciudad.</p>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+        <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+        <li><a href="pages/sistema/portal.html">Portal de turnos</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer">+54 11 4000-1234</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer">contacto@vitta-salud.com.ar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pub-footer__note">
+    <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+    <span class="pub-footer__credit">Sitio de prueba realizado por <img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { initCursor } from './assets/js/modules/cursor.js';
+  import { initPublicNav, initReveal } from './assets/js/modules/public.js';
+  initCursor();
+  initPublicNav();
+  initReveal();
+</script>
+</body>
+</html>

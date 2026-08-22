@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de uso · Vitta</title>
+<meta name="description" content="Manual de uso del sistema de gestión Vitta: roles, turnos, pacientes, reportes y respaldos.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/manual.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<nav class="manual-nav">
+  <a href="pages/sistema/portal.html" class="manual-nav__brand">
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+    VITTA
+  </a>
+  <a href="pages/sistema/portal.html" class="btn btn--ghost btn--sm">Volver al sistema</a>
+</nav>
+
+<header class="manual-hero">
+  <div class="manual-hero__inner">
+    <p class="kicker">Manual de uso</p>
+    <h1>Guía rápida del sistema de gestión</h1>
+    <p class="desc">Todo lo que tu equipo necesita saber para usar Vitta desde el primer día: perfiles, turnos, pacientes, reportes y respaldos.</p>
+  </div>
+</header>
+
+<main class="manual-body">
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4.3"/></svg></span>Perfiles y permisos</h2>
+    <p>Cada persona entra con su propio usuario y ve solo lo que corresponde a su rol. Así se evitan errores y cada uno trabaja sin distracciones.</p>
+    <div class="manual-roles">
+      <div class="manual-role">
+        <h3>Administrador</h3>
+        <ul>
+          <li>Gestiona turnos y pacientes</li>
+          <li>Crea y desactiva usuarios</li>
+          <li>Genera y restaura respaldos</li>
+          <li>Exporta reportes</li>
+        </ul>
+      </div>
+      <div class="manual-role">
+        <h3>Recepción</h3>
+        <ul>
+          <li>Carga y confirma turnos</li>
+          <li>Da de alta pacientes nuevos</li>
+          <li>Exporta reportes de turnos</li>
+        </ul>
+      </div>
+      <div class="manual-role">
+        <h3>Profesional</h3>
+        <ul>
+          <li>Ve su propia agenda</li>
+          <li>Marca turnos como atendidos</li>
+          <li>Carga notas en el historial clínico</li>
+        </ul>
+      </div>
+      <div class="manual-role">
+        <h3>Paciente</h3>
+        <ul>
+          <li>Pide y cancela sus propios turnos</li>
+          <li>Ve su historial clínico</li>
+          <li>Actualiza sus datos de contacto</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>Cómo pedir un turno</h2>
+    <div class="manual-steps">
+      <div class="manual-step"><span class="manual-step__num"></span><p class="manual-step__text"><strong>Entrá a Turnos</strong>desde el menú lateral.</p></div>
+      <div class="manual-step"><span class="manual-step__num"></span><p class="manual-step__text"><strong>Tocá "Solicitar turno" o "Nuevo turno"</strong>según tu perfil.</p></div>
+      <div class="manual-step"><span class="manual-step__num"></span><p class="manual-step__text"><strong>Elegí profesional, fecha y horario disponible</strong>. El sistema avisa si ese horario ya está ocupado.</p></div>
+      <div class="manual-step"><span class="manual-step__num"></span><p class="manual-step__text"><strong>Confirmá</strong>. Se envía automáticamente un aviso por mail a la persona paciente.</p></div>
+    </div>
+    <div class="manual-figure"><img src="assets/img/consultorio-turno-movil.png" alt="Paciente pidiendo un turno desde el celular en la sala de espera" loading="lazy"></div>
+  </section>
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M15.5 14.6c2.6.4 4.5 2.3 4.5 5.4"/></svg></span>Pacientes e historial</h2>
+    <p>En <strong>Pacientes</strong>, administración y recepción pueden cargar fichas nuevas y editar datos de contacto. Los profesionales pueden agregar notas al historial clínico de cada visita, y cada paciente puede ver su propio historial desde <strong>Mi perfil</strong>.</p>
+  </section>
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg></span>Exportar reportes</h2>
+    <p>Desde <strong>Reportes</strong> se puede filtrar turnos por fecha y estado, o listar todos los pacientes, y exportar:</p>
+    <p><strong>Excel (CSV):</strong> se descarga un archivo que Excel abre directamente, con acentos y todo bien formateado.</p>
+    <p><strong>PDF:</strong> abre el diálogo de impresión del navegador con la tabla lista para guardar como PDF.</p>
+  </section>
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.7"/><path d="M4.5 5.5v13c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-13"/><path d="M4.5 12c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7"/></svg></span>Respaldos</h2>
+    <p>El sistema genera un respaldo automático la primera vez que se abre cada día. Desde <strong>Respaldos</strong>, un administrador también puede generar y descargar una copia manual en cualquier momento, o restaurar el sistema completo a partir de un archivo guardado.</p>
+  </section>
+
+  <section class="manual-card">
+    <h2><span class="h-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6"/></svg></span>Usuarios de prueba</h2>
+    <p>Para recorrer el sistema con cada perfil, usá estas credenciales desde la pantalla de ingreso:</p>
+    <table class="manual-cred-table">
+      <thead><tr><th>Perfil</th><th>Usuario</th><th>Contraseña</th></tr></thead>
+      <tbody>
+        <tr><td>Administrador</td><td>admin</td><td>admin123</td></tr>
+        <tr><td>Recepción</td><td>recepcion</td><td>recepcion123</td></tr>
+        <tr><td>Profesional</td><td>doctor</td><td>doctor123</td></tr>
+        <tr><td>Paciente</td><td>paciente</td><td>paciente123</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<div class="manual-foot">
+  <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+  <span class="manual-foot-credit">Sitio de prueba realizado por <img class="manual-foot-logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+</div>
+
+<script type="module">
+  import { initCursor } from './assets/js/modules/cursor.js';
+  initCursor();
+</script>
+</body>
+</html>

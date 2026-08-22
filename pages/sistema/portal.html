@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal de turnos · Vitta</title>
+<meta name="description" content="Sitio de prueba de portfolio: portal interno de Vitta con login por perfil, turnos, pacientes, reportes y respaldos.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="boot" id="boot">
+  <span class="boot__mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+  <span class="boot__label">Vitta</span>
+  <span class="boot__bar"></span>
+</div>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ===================== LOGIN ===================== -->
+<div class="login" id="loginScreen">
+  <aside class="login__aside">
+    <div class="login__brand">
+      <span class="login__brand-mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+      <span class="login__brand-name">VITTA</span>
+    </div>
+
+    <a href="index.html" class="login__back">← Volver al sitio</a>
+
+    <div class="login__pitch">
+      <h1>El sistema de gestión de tu consultorio, sin planillas ni cuadernos.</h1>
+      <p>Turnos, pacientes y reportes en un solo lugar, con acceso según el perfil de cada persona del equipo.</p>
+
+      <div class="login__points">
+        <div class="login__point">
+          <span class="login__point-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4.3"/></svg></span>
+          <span>Permisos por perfil: cada usuario ve solo lo que le corresponde.</span>
+        </div>
+        <div class="login__point">
+          <span class="login__point-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.3"/><path d="M4 7l8 6 8-6"/></svg></span>
+          <span>Avisos automáticos por mail ante cada turno nuevo o cancelado.</span>
+        </div>
+        <div class="login__point">
+          <span class="login__point-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.7"/><path d="M4.5 5.5v13c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-13"/><path d="M4.5 12c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7"/></svg></span>
+          <span>Respaldos diarios de toda la información cargada.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="login__foot">
+      <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+      <span class="login__foot-credit">Sitio de prueba realizado por <img class="login__foot-logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+    </div>
+  </aside>
+
+  <div class="login__form-side">
+    <div class="login__box">
+      <a href="index.html" class="login__back login__back--mobile">← Volver al sitio</a>
+      <div class="login__box-head">
+        <h2>Ingresar</h2>
+        <p>Usá tu usuario y contraseña para entrar al sistema.</p>
+      </div>
+
+      <p class="form-alert" id="loginError" hidden></p>
+
+      <form id="loginForm" novalidate>
+        <div class="login__field">
+          <label for="loginUser">Usuario</label>
+          <input id="loginUser" name="username" autocomplete="username" required>
+        </div>
+        <div class="login__field">
+          <label for="loginPass">Contraseña</label>
+          <input id="loginPass" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn--primary login__submit" type="submit">Ingresar</button>
+      </form>
+
+      <div class="login__demo">
+        <p class="login__demo-title">Usuarios de prueba</p>
+        <div class="login__demo-list" id="demoUsers"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div class="app" id="app">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar__brand" href="index.html" title="Volver al sitio de Vitta">
+      <span class="sidebar__brand-mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+      <span class="sidebar__brand-name">VITTA</span>
+    </a>
+
+    <nav class="sidebar__nav scrollbar" id="sidebarNav"></nav>
+
+    <div class="sidebar__foot">
+      <div class="sidebar__user">
+        <span class="avatar sidebar__avatar" id="sidebarAvatar"></span>
+        <div>
+          <p class="sidebar__user-name" id="sidebarUserName"></p>
+          <p class="sidebar__user-role" id="sidebarUserRole"></p>
+        </div>
+      </div>
+      <button class="sidebar__logout" id="logoutBtn" type="button">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        Cerrar sesión
+      </button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="topbar__menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div>
+          <p class="topbar__title" id="topbarTitle">Panel</p>
+          <p class="topbar__sub" id="topbarSub"></p>
+        </div>
+      </div>
+      <div class="topbar__actions">
+        <div style="position:relative;">
+          <button class="icon-btn notif-bell" id="notifBell" type="button" aria-label="Notificaciones">
+            <svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 4 1.5 5.5 2 6.3H4c.5-.8 2-2.3 2-6.3Z"/><path d="M10 19a2.2 2.2 0 0 0 4 0"/></svg>
+            <span class="notif-dot" id="notifDot" hidden></span>
+          </button>
+          <div class="notif-panel" id="notifPanel">
+            <p class="notif-panel__head">Notificaciones</p>
+            <div class="notif-panel__list" id="notifList"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="view is-active" id="viewContainer"></main>
+  </div>
+</div>
+
+<!-- ===================== MODALES ===================== -->
+<div class="modal-backdrop" id="modalTurno">
+  <div class="modal">
+    <div class="modal__head">
+      <h3 id="modalTurnoTitle">Nuevo turno</h3>
+      <button class="icon-btn" data-close-modal="modalTurno" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form id="formTurno" novalidate>
+      <div class="modal__body">
+        <p class="form-alert" id="turnoError" hidden></p>
+        <div class="form-grid">
+          <div class="field field--full" id="campoPaciente">
+            <label for="turnoPaciente">Paciente</label>
+            <select id="turnoPaciente" required></select>
+          </div>
+          <div class="field" id="campoProfesional">
+            <label for="turnoProfesional">Profesional</label>
+            <select id="turnoProfesional" required></select>
+          </div>
+          <div class="field">
+            <label for="turnoFecha">Fecha</label>
+            <input type="date" id="turnoFecha" required>
+          </div>
+          <div class="field field--full">
+            <label for="turnoHora">Horario</label>
+            <select id="turnoHora" required></select>
+          </div>
+          <div class="field field--full">
+            <label for="turnoMotivo">Motivo de consulta</label>
+            <textarea id="turnoMotivo" placeholder="Ej: control general" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost" data-close-modal="modalTurno">Cancelar</button>
+        <button type="submit" class="btn btn--primary">Agendar turno</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalPaciente">
+  <div class="modal">
+    <div class="modal__head">
+      <h3>Editar paciente</h3>
+      <button class="icon-btn" data-close-modal="modalPaciente" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form id="formPaciente" novalidate>
+      <div class="modal__body">
+        <p class="form-alert" id="pacienteError" hidden></p>
+        <div class="form-grid">
+          <div class="field field--full"><label for="pacNombre">Nombre y apellido</label><input id="pacNombre" required data-only="letters"></div>
+          <div class="field"><label for="pacDni">DNI</label><input id="pacDni" required data-only="digits" inputmode="numeric"></div>
+          <div class="field"><label for="pacTelefono">Teléfono</label><input id="pacTelefono" required data-only="digits" inputmode="numeric"></div>
+          <div class="field"><label for="pacEmail">Email</label><input type="email" id="pacEmail" required></div>
+          <div class="field"><label for="pacObraSocial">Obra social</label><input id="pacObraSocial" data-only="letters"></div>
+          <div class="field field--full"><label for="pacNacimiento">Fecha de nacimiento</label><input type="date" id="pacNacimiento"></div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost" data-close-modal="modalPaciente">Cancelar</button>
+        <button type="submit" class="btn btn--primary">Guardar cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalHistorial">
+  <div class="modal">
+    <div class="modal__head">
+      <h3>Agregar al historial</h3>
+      <button class="icon-btn" data-close-modal="modalHistorial" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form id="formHistorial" novalidate>
+      <div class="modal__body">
+        <p class="form-alert" id="historialError" hidden></p>
+        <div class="field">
+          <label for="histNota">Nota clínica</label>
+          <textarea id="histNota" required placeholder="Diagnóstico, indicaciones, etc."></textarea>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost" data-close-modal="modalHistorial">Cancelar</button>
+        <button type="submit" class="btn btn--primary">Agregar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalUsuario">
+  <div class="modal">
+    <div class="modal__head">
+      <h3>Nuevo usuario</h3>
+      <button class="icon-btn" data-close-modal="modalUsuario" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form id="formUsuario" novalidate>
+      <div class="modal__body">
+        <p class="form-alert" id="usuarioError" hidden></p>
+        <div class="form-grid">
+          <div class="field field--full"><label for="usrNombre">Nombre y apellido</label><input id="usrNombre" required data-only="letters"></div>
+          <div class="field"><label for="usrUsername">Usuario</label><input id="usrUsername" required></div>
+          <div class="field"><label for="usrPassword">Contraseña</label><input id="usrPassword" required></div>
+          <div class="field field--full"><label for="usrEmail">Email</label><input type="email" id="usrEmail" required></div>
+          <div class="field field--full">
+            <label>Perfil</label>
+            <div class="role-pick" id="usrRolePick">
+              <label><input type="radio" name="usrRole" value="paciente" checked> Paciente</label>
+              <label><input type="radio" name="usrRole" value="profesional"> Profesional</label>
+              <label><input type="radio" name="usrRole" value="recepcion"> Recepción</label>
+              <label><input type="radio" name="usrRole" value="admin"> Administrador</label>
+            </div>
+          </div>
+          <div class="field field--full" id="campoEspecialidad" hidden>
+            <label for="usrEspecialidad">Especialidad</label>
+            <input id="usrEspecialidad" placeholder="Ej: Odontología" data-only="letters">
+          </div>
+          <div class="field field--full" id="campoPacienteVinculado" hidden>
+            <label for="usrPacienteVinculado">Vincular con ficha de paciente</label>
+            <select id="usrPacienteVinculado"></select>
+            <small>La persona va a poder pedir turnos y ver su propio historial.</small>
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost" data-close-modal="modalUsuario">Cancelar</button>
+        <button type="submit" class="btn btn--primary">Crear usuario</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalConfirm">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal__head">
+      <h3>Confirmar</h3>
+      <button class="icon-btn" data-close-modal="modalConfirm" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="modal__body"><p id="modalConfirmText"></p></div>
+    <div class="modal__foot">
+      <button type="button" class="btn btn--ghost" data-close-modal="modalConfirm">Cancelar</button>
+      <button type="button" class="btn btn--danger" id="modalConfirmBtn">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

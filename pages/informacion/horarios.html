@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horarios · Vitta</title>
+<meta name="description" content="Horarios de atención de Vitta por sede, y disponibilidad de guardia y turnos online.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/public.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="pub-nav" id="pubNav">
+  <a href="index.html" class="pub-nav__brand">
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+    VITTA
+  </a>
+  <ul class="pub-nav__links" id="pubNavLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+    <li><a href="pages/informacion/horarios.html" class="is-active">Horarios</a></li>
+    <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+    <li><a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__mobile-cta">Portal de turnos</a></li>
+  </ul>
+  <div class="pub-nav__actions">
+    <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__cta-desktop">Portal de turnos</a>
+    <button class="pub-nav__burger" id="pubBurger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="pub-page-head">
+  <p class="kicker">Horarios</p>
+  <h1>Cuándo podés encontrarnos</h1>
+  <p>Horario general de atención. Para franjas puntuales por especialidad o profesional, elegí el día y horario disponible directamente desde el portal de turnos.</p>
+</header>
+
+<section class="pub-section pub-section--tight-bottom">
+  <div class="hours-card reveal">
+    <table class="hours-table">
+      <thead><tr><th>Día</th><th>Horario</th></tr></thead>
+      <tbody>
+        <tr><td>Lunes a viernes</td><td>8:00 a 20:00</td></tr>
+        <tr><td>Sábados</td><td>9:00 a 13:00</td></tr>
+        <tr class="is-closed"><td>Domingos y feriados</td><td>Cerrado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hours-note reveal reveal-1">
+    <svg viewBox="0 0 24 24"><path d="M12 9v4M12 16.5h.01"/><path d="M10.3 3.9 2.5 17.5A1.8 1.8 0 0 0 4 20h16a1.8 1.8 0 0 0 1.5-2.5L13.7 3.9a1.8 1.8 0 0 0-3.4 0Z"/></svg>
+    <div>
+      <strong>El horario puede variar según la sede</strong>
+      Vitta Belgrano atiende los sábados hasta las 18hs y Vitta Caballito no abre los sábados. Confirmá el horario de tu sede en <a href="pages/informacion/sedes.html" style="text-decoration:underline;">Sedes</a> antes de acercarte sin turno.
+    </div>
+  </div>
+
+  <div class="hours-note reveal reveal-2" style="background:var(--primary-soft); color:var(--primary-dim); margin-top:14px;">
+    <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4.3"/></svg>
+    <div>
+      <strong>Guardia pediátrica y clínica</strong>
+      Vitta Recoleta cuenta con guardia de clínica médica y pediatría los 365 días, de 8 a 24hs, sin turno previo.
+    </div>
+  </div>
+</section>
+
+<section class="pub-section">
+  <div class="pub-cta reveal">
+    <div class="pub-cta__inner">
+      <h2>Reservá tu horario ideal</h2>
+      <p>Elegí el día y la franja horaria que más te convenga desde el portal de turnos.</p>
+      <div class="pub-cta__actions">
+        <a href="pages/sistema/portal.html" class="btn btn--primary">Ir al portal de turnos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pub-footer">
+  <div class="pub-footer__top">
+    <div class="pub-footer__col">
+      <div class="pub-footer__brand">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+        VITTA
+      </div>
+      <p>Centro de salud con clínica médica, especialidades, laboratorio e imágenes en tres sedes de la ciudad.</p>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+        <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+        <li><a href="pages/sistema/portal.html">Portal de turnos</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer">+54 11 4000-1234</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer">contacto@vitta-salud.com.ar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pub-footer__note">
+    <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+    <span class="pub-footer__credit">Sitio de prueba realizado por <img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { initCursor } from './assets/js/modules/cursor.js';
+  import { initPublicNav, initReveal } from './assets/js/modules/public.js';
+  initCursor();
+  initPublicNav();
+  initReveal();
+</script>
+</body>
+</html>

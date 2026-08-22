@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sedes · Vitta</title>
+<meta name="description" content="Las tres sedes de Vitta en la ciudad: direcciones, teléfonos y especialidades disponibles en cada una.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/public.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="pub-nav" id="pubNav">
+  <a href="index.html" class="pub-nav__brand">
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+    VITTA
+  </a>
+  <ul class="pub-nav__links" id="pubNavLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="pages/informacion/sedes.html" class="is-active">Sedes</a></li>
+    <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+    <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+    <li><a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__mobile-cta">Portal de turnos</a></li>
+  </ul>
+  <div class="pub-nav__actions">
+    <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__cta-desktop">Portal de turnos</a>
+    <button class="pub-nav__burger" id="pubBurger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="pub-page-head">
+  <p class="kicker">Sedes</p>
+  <h1>Tres sedes, una sola historia clínica</h1>
+  <p>Pedí tu turno en la sede que te quede más cerca. Tu historia clínica y tus estudios están disponibles en cualquiera de las tres.</p>
+</header>
+
+<section class="pub-section pub-section--tight-bottom">
+  <div class="sedes-grid">
+    <article class="sede-card reveal">
+      <div class="sede-card__map"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg></div>
+      <div class="sede-card__body">
+        <span class="sede-card__tag">Sede central</span>
+        <h3>Vitta Recoleta</h3>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg><span>Av. Las Heras 2140, CABA</span></div>
+        <a class="sede-card__row sede-card__row--link" href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta%20Recoleta." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M6.5 3.5c1 2 1.6 3.3 1.8 4.2.2 1-1.7 2-1.6 2.9.2 1.9 3.7 5.4 5.6 5.6.9.1 1.9-1.8 2.9-1.6.9.2 2.2.8 4.2 1.8.6.3.9 1.1.6 2-1 2.9-4.7 4-7.3 2.9-4-1.7-8.1-5.8-9.8-9.8C1.7 8 2.8 4.3 5.7 3.3c.9-.3 1.7 0 2 .6Z"/></svg><span>+54 11 4000-1234</span></a>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Lun. a vier. 8 a 20hs</span></div>
+        <div class="sede-card__actions">
+          <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm">Pedir turno</a>
+          <a href="pages/informacion/horarios.html" class="btn btn--ghost btn--sm">Ver horarios</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="sede-card reveal reveal-1">
+      <div class="sede-card__map"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg></div>
+      <div class="sede-card__body">
+        <span class="sede-card__tag">Sede</span>
+        <h3>Vitta Belgrano</h3>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg><span>Av. Cabildo 1850, CABA</span></div>
+        <a class="sede-card__row sede-card__row--link" href="https://wa.me/541140005678?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta%20Belgrano." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M6.5 3.5c1 2 1.6 3.3 1.8 4.2.2 1-1.7 2-1.6 2.9.2 1.9 3.7 5.4 5.6 5.6.9.1 1.9-1.8 2.9-1.6.9.2 2.2.8 4.2 1.8.6.3.9 1.1.6 2-1 2.9-4.7 4-7.3 2.9-4-1.7-8.1-5.8-9.8-9.8C1.7 8 2.8 4.3 5.7 3.3c.9-.3 1.7 0 2 .6Z"/></svg><span>+54 11 4000-5678</span></a>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Lun. a sáb. 8 a 18hs</span></div>
+        <div class="sede-card__actions">
+          <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm">Pedir turno</a>
+          <a href="pages/informacion/horarios.html" class="btn btn--ghost btn--sm">Ver horarios</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="sede-card reveal reveal-2">
+      <div class="sede-card__map"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg></div>
+      <div class="sede-card__body">
+        <span class="sede-card__tag">Sede</span>
+        <h3>Vitta Caballito</h3>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg><span>Av. Rivadavia 5230, CABA</span></div>
+        <a class="sede-card__row sede-card__row--link" href="https://wa.me/541140009012?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta%20Caballito." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M6.5 3.5c1 2 1.6 3.3 1.8 4.2.2 1-1.7 2-1.6 2.9.2 1.9 3.7 5.4 5.6 5.6.9.1 1.9-1.8 2.9-1.6.9.2 2.2.8 4.2 1.8.6.3.9 1.1.6 2-1 2.9-4.7 4-7.3 2.9-4-1.7-8.1-5.8-9.8-9.8C1.7 8 2.8 4.3 5.7 3.3c.9-.3 1.7 0 2 .6Z"/></svg><span>+54 11 4000-9012</span></a>
+        <div class="sede-card__row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Lun. a vier. 9 a 19hs</span></div>
+        <div class="sede-card__actions">
+          <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm">Pedir turno</a>
+          <a href="pages/informacion/horarios.html" class="btn btn--ghost btn--sm">Ver horarios</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="pub-section">
+  <div class="pub-cta reveal">
+    <div class="pub-cta__inner">
+      <h2>¿Ya sabés a qué sede ir?</h2>
+      <p>Elegí la sede y el horario desde el portal de turnos, sin llamadas ni esperas.</p>
+      <div class="pub-cta__actions">
+        <a href="pages/sistema/portal.html" class="btn btn--primary">Ir al portal de turnos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pub-footer">
+  <div class="pub-footer__top">
+    <div class="pub-footer__col">
+      <div class="pub-footer__brand">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+        VITTA
+      </div>
+      <p>Centro de salud con clínica médica, especialidades, laboratorio e imágenes en tres sedes de la ciudad.</p>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+        <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+        <li><a href="pages/sistema/portal.html">Portal de turnos</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer">+54 11 4000-1234</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer">contacto@vitta-salud.com.ar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pub-footer__note">
+    <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+    <span class="pub-footer__credit">Sitio de prueba realizado por <img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { initCursor } from './assets/js/modules/cursor.js';
+  import { initPublicNav, initReveal } from './assets/js/modules/public.js';
+  initCursor();
+  initPublicNav();
+  initReveal();
+</script>
+</body>
+</html>

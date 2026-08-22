@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base id="siteBase" href="/">
+<script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Vitta</title>
+<meta name="description" content="Contactate con Vitta: teléfono, email, dirección de la sede central y formulario de contacto.">
+<meta name="theme-color" content="#0e6b5c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/public.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="pub-nav" id="pubNav">
+  <a href="index.html" class="pub-nav__brand">
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+    VITTA
+  </a>
+  <ul class="pub-nav__links" id="pubNavLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+    <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+    <li><a href="pages/informacion/contacto.html" class="is-active">Contacto</a></li>
+    <li><a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__mobile-cta">Portal de turnos</a></li>
+  </ul>
+  <div class="pub-nav__actions">
+    <a href="pages/sistema/portal.html" class="btn btn--primary btn--sm pub-nav__cta-desktop">Portal de turnos</a>
+    <button class="pub-nav__burger" id="pubBurger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="pub-page-head">
+  <p class="kicker">Contacto</p>
+  <h1>Escribinos, te respondemos nosotros</h1>
+  <p>Para pedir, cambiar o cancelar un turno usá el portal: es más rápido. Para el resto de las consultas, este es tu lugar.</p>
+</header>
+
+<section class="pub-section">
+  <div class="pub-contact">
+    <div class="pub-contact__info reveal">
+      <h2>Hablemos</h2>
+      <p>Nuestro equipo de administración responde de lunes a viernes de 9 a 18hs.</p>
+      <ul class="pub-contact__list">
+        <li>
+          <a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer" class="pub-contact__list-link">
+            <span class="icon-btn"><svg viewBox="0 0 24 24"><path d="M6.5 3.5c1 2 1.6 3.3 1.8 4.2.2 1-1.7 2-1.6 2.9.2 1.9 3.7 5.4 5.6 5.6.9.1 1.9-1.8 2.9-1.6.9.2 2.2.8 4.2 1.8.6.3.9 1.1.6 2-1 2.9-4.7 4-7.3 2.9-4-1.7-8.1-5.8-9.8-9.8C1.7 8 2.8 4.3 5.7 3.3c.9-.3 1.7 0 2 .6Z"/></svg></span>
+            <div><strong>Teléfono</strong><span>+54 11 4000-1234 · escribinos por WhatsApp</span></div>
+          </a>
+        </li>
+        <li>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer" class="pub-contact__list-link">
+            <span class="icon-btn"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.3"/><path d="M4 7l8 6 8-6"/></svg></span>
+            <div><strong>Email</strong><span>contacto@vitta-salud.com.ar</span></div>
+          </a>
+        </li>
+        <li>
+          <span class="icon-btn"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+          <div><strong>Sede central</strong><span>Av. Las Heras 2140, CABA</span></div>
+        </li>
+      </ul>
+      <a href="pages/sistema/portal.html" class="btn btn--soft">¿Necesitás un turno? Andá al portal →</a>
+    </div>
+
+    <form class="pub-contact__form reveal reveal-1" id="contactForm" novalidate>
+      <p class="form-alert" id="contactAlert" hidden>Completá los campos obligatorios antes de enviar.</p>
+      <div class="form-grid">
+        <div class="field"><label for="cName">Nombre</label><input id="cName" name="name" required autocomplete="name" data-only="letters" placeholder="Tu nombre"></div>
+        <div class="field"><label for="cEmail">Email</label><input id="cEmail" name="email" type="email" required autocomplete="email" placeholder="tu@email.com"></div>
+        <div class="field field--full">
+          <label for="cMotivo">Motivo de la consulta</label>
+          <select id="cMotivo" name="motivo" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="administrativo">Consulta administrativa</option>
+            <option value="facturacion">Facturación y obras sociales</option>
+            <option value="reclamo">Reclamo o sugerencia</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="field field--full">
+          <label for="cMensaje">Mensaje</label>
+          <textarea id="cMensaje" name="mensaje" required placeholder="Contanos en qué te podemos ayudar"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block pub-contact__submit">Enviar mensaje</button>
+      <p class="pub-contact__note" id="contactNote"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pub-footer">
+  <div class="pub-footer__top">
+    <div class="pub-footer__col">
+      <div class="pub-footer__brand">
+        <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 3 12 3-9 2 3h4"/></svg></span>
+        VITTA
+      </div>
+      <p>Centro de salud con clínica médica, especialidades, laboratorio e imágenes en tres sedes de la ciudad.</p>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Sitio</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="pages/informacion/sedes.html">Sedes</a></li>
+        <li><a href="pages/informacion/horarios.html">Horarios</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="pages/informacion/contacto.html">Contacto</a></li>
+        <li><a href="pages/sistema/portal.html">Portal de turnos</a></li>
+      </ul>
+    </div>
+    <div class="pub-footer__col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer">+54 11 4000-1234</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer">contacto@vitta-salud.com.ar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pub-footer__note">
+    <span>© 2026 Vitta. Marca ficticia de demostración.</span>
+    <span class="pub-footer__credit">Sitio de prueba realizado por <img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { initCursor } from './assets/js/modules/cursor.js';
+  import { initPublicNav, initReveal, initContactForm } from './assets/js/modules/public.js';
+  import { initInputFilters } from './assets/js/modules/validation.js';
+  initCursor();
+  initPublicNav();
+  initReveal();
+  initInputFilters();
+  initContactForm();
+</script>
+</body>
+</html>
