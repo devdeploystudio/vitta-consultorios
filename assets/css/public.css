@@ -26,7 +26,7 @@
 /* ============ HERO ============ */
 .pub-hero{
   position:relative; padding: 100px clamp(20px, 5vw, 56px) 90px; color:#eef6f2; overflow:hidden;
-  background: url('../img/consultorio-turno-movil.png') center 30% / cover no-repeat;
+  background: url('../img/consultorio-turno-movil.jpg') center 30% / cover no-repeat;
 }
 .pub-hero::before{
   content:""; position:absolute; inset:0; pointer-events:none;

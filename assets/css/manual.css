@@ -12,7 +12,7 @@
 
 .manual-hero{
   position:relative; padding: 70px 28px; color:#eef6f2; overflow:hidden;
-  background: url('../img/consultorio-consulta.png') center 20% / cover no-repeat;
+  background: url('../img/consultorio-consulta.jpg') center 20% / cover no-repeat;
 }
 .manual-hero::before{
   content:""; position:absolute; inset:0; pointer-events:none;

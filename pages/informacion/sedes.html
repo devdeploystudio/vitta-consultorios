@@ -6,7 +6,25 @@
 <script>if (location.hostname.endsWith("github.io")) document.getElementById("siteBase").href = "/vitta-consultorios/";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sedes · Vitta</title>
-<meta name="description" content="Las tres sedes de Vitta en la ciudad: direcciones, teléfonos y especialidades disponibles en cada una.">
+<meta name="description" content="Las tres sedes de Vitta en la ciudad: direcciones, teléfonos y horarios de atención de cada una, con acceso directo al portal de turnos.">
+
+<!-- TODO: confirmar/actualizar la URL real al deployar -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vitta">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://devdeploystudio.github.io/vitta-consultorios/pages/informacion/sedes.html">
+<meta property="og:title" content="Sedes · Vitta">
+<meta property="og:description" content="Las tres sedes de Vitta en la ciudad: direcciones, teléfonos y horarios de atención de cada una, con acceso directo al portal de turnos.">
+<meta property="og:image" content="https://devdeploystudio.github.io/vitta-consultorios/assets/img/consultorio-consulta.jpg">
+
+<!-- Social cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sedes · Vitta">
+<meta name="twitter:description" content="Las tres sedes de Vitta en la ciudad: direcciones, teléfonos y horarios de atención de cada una, con acceso directo al portal de turnos.">
+<meta name="twitter:image" content="https://devdeploystudio.github.io/vitta-consultorios/assets/img/consultorio-consulta.jpg">
+
 <meta name="theme-color" content="#0e6b5c">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +69,7 @@
 </header>
 
 <section class="pub-section pub-section--tight-bottom">
+  <h2 class="visually-hidden">Nuestras sedes</h2>
   <div class="sedes-grid">
     <article class="sede-card reveal">
       <div class="sede-card__map"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.6"/></svg></div>
@@ -147,7 +166,7 @@
   </div>
   <div class="pub-footer__note">
     <span>© 2026 Vitta. Marca ficticia de demostración.</span>
-    <span class="pub-footer__credit">Sitio de prueba realizado por <img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+    <span class="pub-footer__credit">Sitio de prueba realizado por <a href="https://deploystudio.com.ar/" target="_blank" rel="noopener noreferrer"><img class="pub-footer__logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></a></span>
   </div>
 </footer>
 

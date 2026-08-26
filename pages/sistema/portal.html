@@ -7,6 +7,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portal de turnos · Vitta</title>
 <meta name="description" content="Sitio de prueba de portfolio: portal interno de Vitta con login por perfil, turnos, pacientes, reportes y respaldos.">
+
+<!-- TODO: confirmar/actualizar la URL real al deployar -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vitta">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://devdeploystudio.github.io/vitta-consultorios/pages/sistema/portal.html">
+<meta property="og:title" content="Portal de turnos · Vitta">
+<meta property="og:description" content="Sitio de prueba de portfolio: portal interno de Vitta con login por perfil, turnos, pacientes, reportes y respaldos.">
+<meta property="og:image" content="https://devdeploystudio.github.io/vitta-consultorios/assets/img/consultorio-recepcion.jpg">
+
+<!-- Social cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portal de turnos · Vitta">
+<meta name="twitter:description" content="Sitio de prueba de portfolio: portal interno de Vitta con login por perfil, turnos, pacientes, reportes y respaldos.">
+<meta name="twitter:image" content="https://devdeploystudio.github.io/vitta-consultorios/assets/img/consultorio-recepcion.jpg">
+
 <meta name="theme-color" content="#0e6b5c">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +79,7 @@
 
     <div class="login__foot">
       <span>© 2026 Vitta. Marca ficticia de demostración.</span>
-      <span class="login__foot-credit">Sitio de prueba realizado por <img class="login__foot-logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></span>
+      <span class="login__foot-credit">Sitio de prueba realizado por <a href="https://deploystudio.com.ar/" target="_blank" rel="noopener noreferrer"><img class="login__foot-logo" src="assets/img/deploy-logo.png" alt="Deploy" width="900" height="200" loading="lazy"></a></span>
     </div>
   </aside>
 
@@ -73,9 +91,8 @@
         <p>Usá tu usuario y contraseña para entrar al sistema.</p>
       </div>
 
-      <p class="form-alert" id="loginError" hidden></p>
-
       <form id="loginForm" novalidate>
+        <p class="form-alert" id="loginError" hidden></p>
         <div class="login__field">
           <label for="loginUser">Usuario</label>
           <input id="loginUser" name="username" autocomplete="username" required>
