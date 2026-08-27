@@ -183,13 +183,13 @@
 .pub-footer__brand .mark{ width:30px; height:30px; border-radius:9px; background: rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; flex:none; }
 .pub-footer__brand svg{ width:16px; height:16px; stroke:#eef6f2; fill:none; stroke-width:2.3; stroke-linecap:round; stroke-linejoin:round; }
 .pub-footer__col p{ color: rgba(207,228,222,.7); font-size:13.5px; line-height:1.6; max-width:260px; }
-.pub-footer__col h4{ font-size:12.5px; text-transform:uppercase; letter-spacing:.06em; color: rgba(207,228,222,.5); margin-bottom:14px; }
+.pub-footer__col h3{ font-size:12.5px; text-transform:uppercase; letter-spacing:.06em; color: rgba(207,228,222,.6); margin-bottom:14px; }
 .pub-footer__col ul{ display:flex; flex-direction:column; gap:10px; }
 .pub-footer__col a{ font-size:13.5px; color: rgba(207,228,222,.85); transition: color .2s; }
 .pub-footer__col a:hover{ color:#fff; }
 .pub-footer__note{
   max-width:1180px; margin:0 auto; padding: 22px 20px 30px; border-top:1px solid rgba(207,228,222,.12);
-  display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color: rgba(207,228,222,.5);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color: rgba(207,228,222,.6);
 }
 .pub-footer__credit{ display:inline-flex; align-items:center; gap:6px; }
 .pub-footer__logo{ height:13px; width:auto; filter:brightness(0) invert(1); opacity:.85; transition:opacity .25s ease; }

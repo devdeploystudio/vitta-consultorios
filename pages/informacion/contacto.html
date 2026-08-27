@@ -29,7 +29,9 @@
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/public.css">
@@ -62,6 +64,7 @@
   </div>
 </nav>
 
+<main>
 <header class="pub-page-head">
   <p class="kicker">Contacto</p>
   <h1>Escribinos, te respondemos nosotros</h1>
@@ -120,6 +123,7 @@
     </form>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="pub-footer">
@@ -132,7 +136,7 @@
       <p>Centro de salud con clínica médica, especialidades, laboratorio e imágenes en tres sedes de la ciudad.</p>
     </div>
     <div class="pub-footer__col">
-      <h4>Sitio</h4>
+      <h3>Sitio</h3>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="index.html#servicios">Servicios</a></li>
@@ -141,14 +145,14 @@
       </ul>
     </div>
     <div class="pub-footer__col">
-      <h4>Ayuda</h4>
+      <h3>Ayuda</h3>
       <ul>
         <li><a href="pages/informacion/contacto.html">Contacto</a></li>
         <li><a href="pages/sistema/portal.html">Portal de turnos</a></li>
       </ul>
     </div>
     <div class="pub-footer__col">
-      <h4>Contacto</h4>
+      <h3>Contacto</h3>
       <ul>
         <li><a href="https://wa.me/541140001234?text=Hola!%20Quiero%20consultar%20sobre%20un%20turno%20en%20Vitta." target="_blank" rel="noopener noreferrer">+54 11 4000-1234</a></li>
         <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contacto@vitta-salud.com.ar" target="_blank" rel="noopener noreferrer">contacto@vitta-salud.com.ar</a></li>
